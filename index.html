@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO & Social Sharing Metadata -->
+  <title>KOLA SAMEERA | B.Tech Computer Science Engineering Student | Portfolio</title>
+  <meta name="description" content="Official horizontal portfolio of Kola Sameera, a B.Tech Computer Science and Engineering student at Sridevi Women's Engineering College. Exploring software development, web technologies, and machine learning.">
+  <meta name="author" content="Kola Sameera">
+  <meta name="keywords" content="Kola Sameera, portfolio, horizontal slider, computer science student, Sridevi Women's Engineering College, web developer, software engineering, Python, C, HTML, CSS, Node.js">
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="KOLA SAMEERA | Horizontal Developer Portfolio">
+  <meta property="og:description" content="Personal horizontal slider portfolio of Kola Sameera showcasing projects, technical skills, education, and resume.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (Code Bracket Icon) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome CDN for Modern Developer Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="horizontal-slider-body">
+
+  <!-- =========================================================
+       1. NAVIGATION BAR (Fixed at Top)
+       ========================================================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo / Name -->
+      <a href="#home" class="nav-logo" data-slide-target="0" aria-label="Kola Sameera - Home">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">Sameera</span>
+        <span class="logo-slash">/</span>
+        <span class="logo-bracket">&gt;</span>
+      </a>
+
+      <!-- Horizontal Navigation Links -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active" data-slide-target="0">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link" data-slide-target="1">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#education" class="nav-link" data-slide-target="2">Education</a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" class="nav-link" data-slide-target="3">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link" data-slide-target="4">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#hackathons" class="nav-link" data-slide-target="5">Hackathons</a>
+          </li>
+          <li class="nav-item">
+            <a href="#resume" class="nav-link" data-slide-target="6">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link" data-slide-target="7">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Mobile View Resume Button -->
+        <div class="mobile-nav-cta">
+          <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>View Resume</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Desktop Navbar Actions -->
+      <div class="nav-actions">
+        <!-- View Resume Button in Navbar -->
+        <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-nav-resume" title="Open Resume PDF in New Tab">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>View Resume</span>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       2. HORIZONTAL SLIDER VIEWPORT & MASTER CONTROLS
+       ========================================================= -->
+
+  <!-- Left & Right Floating Master Arrows -->
+  <button class="master-arrow-btn master-prev-btn" id="master-prev-btn" aria-label="Previous Slide (Slide Left)" title="Previous Slide (Left Arrow)">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button class="master-arrow-btn master-next-btn" id="master-next-btn" aria-label="Next Slide (Slide Right)" title="Next Slide (Right Arrow)">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+
+  <!-- Master Horizontal Viewport -->
+  <main class="slider-viewport" id="slider-viewport">
+    
+    <!-- The Master Horizontal Track: Transitions via CSS transform: translateX() -->
+    <div class="slider-track" id="slider-track">
+
+      <!-- =====================================================
+           SLIDE 1: HOME / HERO SECTION (Index 0)
+           ===================================================== -->
+      <section class="slide-section active" id="home" data-slide-index="0">
+        <div class="glow-orb orb-primary" aria-hidden="true"></div>
+        <div class="glow-orb orb-secondary" aria-hidden="true"></div>
+
+        <div class="container hero-container slide-inner">
+          
+          <!-- LEFT: Profile Image Area -->
+          <div class="hero-image-wrapper reveal-horizontal">
+            <div class="profile-card">
+              <div class="profile-image-container">
+                <img 
+                  src="assets/profile.jpg" 
+                  alt="Kola Sameera - Profile Photo" 
+                  class="profile-img" 
+                  id="profile-img"
+                  loading="eager"
+                  onerror="this.onerror=null; this.parentElement.classList.add('use-avatar-fallback'); this.style.display='none';"
+                >
+                <div class="avatar-fallback" aria-hidden="true">
+                  <span class="avatar-monogram">KS</span>
+                  <span class="avatar-fallback-name">Kola Sameera</span>
+                </div>
+              </div>
+              <div class="profile-badge">
+                <span class="status-indicator"></span>
+                <span>Available for Internships</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Name, Role, Introduction, 3 Buttons -->
+          <div class="hero-content reveal-horizontal">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">KOLA SAMEERA</h1>
+            <h2 class="hero-role">Computer Science and Engineering Student</h2>
+            <p class="hero-location"><i class="fa-solid fa-location-dot"></i> Nagarkurnool, India</p>
+
+            <p class="hero-intro">
+              A motivated B.Tech Computer Science and Engineering student at Sridevi Women's Engineering College, eager to apply academic knowledge to real-world applications, build responsive software solutions, and contribute positively to organizational growth.
+            </p>
+
+            <!-- 3 Hero Action Buttons -->
+            <div class="hero-buttons">
+              <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-hero-view-resume">
+                <i class="fa-solid fa-eye"></i>
+                <span>View Resume</span>
+              </a>
+
+              <a href="assets/resume.pdf" download="KOLA_SAMEERA_Resume.pdf" class="btn btn-secondary" id="btn-hero-download-resume">
+                <i class="fa-solid fa-download"></i>
+                <span>Download Resume</span>
+              </a>
+
+              <a href="#projects" class="btn btn-outline" data-slide-target="4" id="btn-view-projects">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>View Projects</span>
+              </a>
+            </div>
+
+            <!-- Quick Connect Links -->
+            <div class="hero-socials">
+              <span class="socials-label">Quick Connect:</span>
+              <a href="mailto:kolasameera90@gmail.com" class="social-btn" aria-label="Email Kola Sameera" title="Email: kolasameera90@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="tel:+916301623737" class="social-btn" aria-label="Call Kola Sameera" title="Phone: +91-6301623737">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================
+           SLIDE 2: ABOUT ME SECTION (Index 1)
+           ===================================================== -->
+      <section class="slide-section" id="about" data-slide-index="1">
+        <div class="container slide-inner">
+          <div class="section-header reveal-horizontal">
+            <span class="section-badge">Career Objective</span>
+            <h2 class="section-title">About Me</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="about-grid">
+            <!-- LEFT: Exact Career Objective from Resume -->
+            <div class="about-text-content reveal-horizontal">
+              <div class="objective-card">
+                <div class="objective-icon">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <p class="about-objective-text">
+                  "A motivated and hardworking student seeking an internship opportunity to gain hands-on experience and practical knowledge. Eager to apply theoretical concepts learned during academics to real-world applications. Looking forward to enhancing technical and professional skills while contributing positively to the organization’s growth."
+                </p>
+              </div>
+              
+              <p class="about-subtext">
+                Currently pursuing my B.Tech in Computer Science and Engineering at Sridevi Women's Engineering College (2023–2027). I focus on writing clean, well-tested code, understanding core computing principles, and collaborating on impactful engineering projects.
+              </p>
+            </div>
+
+            <!-- RIGHT: Quick Snapshot Cards -->
+            <div class="about-info-cards reveal-horizontal">
+              <div class="info-card">
+                <div class="info-card-icon">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="info-card-details">
+                  <h3 class="info-card-title">Degree</h3>
+                  <p class="info-card-text">B.Tech in Computer Science &amp; Engineering</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card-icon">
+                  <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <div class="info-card-details">
+                  <h3 class="info-card-title">Institution</h3>
+                  <p class="info-card-text">Sridevi Women’s Engineering College</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="info-card-details">
+                  <h3 class="info-card-title">Location</h3>
+                  <p class="info-card-text">Nagarkurnool, Telangana, India</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card-icon">
+                  <i class="fa-solid fa-trophy"></i>
+                </div>
+                <div class="info-card-details">
+                  <h3 class="info-card-title">Hackathons</h3>
+                  <p class="info-card-text">Smart India Hackathon &amp; Hackathon 2k26</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           SLIDE 3: EDUCATION SECTION (Index 2)
+           ===================================================== -->
+      <section class="slide-section" id="education" data-slide-index="2">
+        <div class="container slide-inner">
+          <div class="section-header reveal-horizontal">
+            <span class="section-badge">Academic Background</span>
+            <h2 class="section-title">Education</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">
+              My academic journey across secondary, intermediate, and undergraduate studies.
+            </p>
+          </div>
+
+          <div class="education-grid">
+            <!-- Entry 1: B.Tech -->
+            <div class="education-card reveal-horizontal">
+              <div class="education-badge-year">
+                <i class="fa-regular fa-calendar"></i>
+                <span>2023 – 2027</span>
+              </div>
+              <div class="education-content">
+                <div class="education-icon-box">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 class="education-degree">B.Tech in Computer Science and Engineering</h3>
+                <p class="education-institution">
+                  <i class="fa-solid fa-building-columns"></i> Sridevi Women’s Engineering College, India
+                </p>
+                <p class="education-desc">
+                  Undergraduate program focused on core computer science subjects, algorithms, programming languages, database management, and hands-on software development.
+                </p>
+              </div>
+              <div class="education-status-tag current">Currently Pursuing</div>
+            </div>
+
+            <!-- Entry 2: Intermediate -->
+            <div class="education-card reveal-horizontal">
+              <div class="education-badge-year">
+                <i class="fa-regular fa-calendar"></i>
+                <span>2021 – 2023</span>
+              </div>
+              <div class="education-content">
+                <div class="education-icon-box">
+                  <i class="fa-solid fa-school"></i>
+                </div>
+                <h3 class="education-degree">Intermediate</h3>
+                <p class="education-institution">
+                  <i class="fa-solid fa-building-columns"></i> New Era Junior College
+                </p>
+                <p class="education-location">
+                  <i class="fa-solid fa-location-dot"></i> Nagarkurnool District
+                </p>
+                <p class="education-desc">
+                  Higher secondary education with a strong analytical focus on Mathematics, Physics, and Chemistry.
+                </p>
+              </div>
+              <div class="education-status-tag completed">Completed</div>
+            </div>
+
+            <!-- Entry 3: Board of Secondary Education -->
+            <div class="education-card reveal-horizontal">
+              <div class="education-badge-year">
+                <i class="fa-regular fa-calendar"></i>
+                <span>2020 – 2021</span>
+              </div>
+              <div class="education-content">
+                <div class="education-icon-box">
+                  <i class="fa-solid fa-book-bookmark"></i>
+                </div>
+                <h3 class="education-degree">Board of Secondary Education</h3>
+                <p class="education-institution">
+                  <i class="fa-solid fa-building-columns"></i> ZPHS Chandakonda
+                </p>
+                <p class="education-location">
+                  <i class="fa-solid fa-location-dot"></i> Nagarkurnool District
+                </p>
+                <p class="education-desc">
+                  Secondary school education establishing foundational academic skills and scientific problem-solving.
+                </p>
+              </div>
+              <div class="education-status-tag completed">Completed</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           SLIDE 4: TECHNICAL SKILLS (Index 3)
+           ===================================================== -->
+      <section class="slide-section" id="skills" data-slide-index="3">
+        <div class="container slide-inner">
+          <div class="section-header reveal-horizontal">
+            <span class="section-badge">Technical Stack</span>
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">
+              Technologies, programming languages, and tools from my resume.
+            </p>
+          </div>
+
+          <div class="skills-categories-grid">
+            <!-- Category 1: Programming Languages -->
+            <div class="skill-category-card reveal-horizontal">
+              <div class="category-header">
+                <div class="category-icon prog-icon">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="category-title">Programming Languages</h3>
+              </div>
+              <div class="skills-pills">
+                <div class="skill-chip">
+                  <i class="fa-solid fa-terminal skill-chip-icon c-color"></i>
+                  <span class="skill-chip-name">C</span>
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-brands fa-python skill-chip-icon python-color"></i>
+                  <span class="skill-chip-name">Python</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 2: Web Technologies -->
+            <div class="skill-category-card reveal-horizontal">
+              <div class="category-header">
+                <div class="category-icon web-icon">
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+                <h3 class="category-title">Web Technologies</h3>
+              </div>
+              <div class="skills-pills">
+                <div class="skill-chip">
+                  <i class="fa-brands fa-html5 skill-chip-icon html-color"></i>
+                  <span class="skill-chip-name">HTML</span>
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-brands fa-css3-alt skill-chip-icon css-color"></i>
+                  <span class="skill-chip-name">CSS</span>
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-brands fa-node-js skill-chip-icon node-color"></i>
+                  <span class="skill-chip-name">Node.js</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 3: Tools -->
+            <div class="skill-category-card reveal-horizontal">
+              <div class="category-header">
+                <div class="category-icon tools-icon">
+                  <i class="fa-solid fa-toolbox"></i>
+                </div>
+                <h3 class="category-title">Tools</h3>
+              </div>
+              <div class="skills-pills">
+                <div class="skill-chip">
+                  <i class="fa-brands fa-git-alt skill-chip-icon git-color"></i>
+                  <span class="skill-chip-name">Git</span>
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-brands fa-github skill-chip-icon github-color"></i>
+                  <span class="skill-chip-name">GitHub</span>
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-laptop-code skill-chip-icon vscode-color"></i>
+                  <span class="skill-chip-name">VS Code</span>
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-chart-column skill-chip-icon powerbi-color"></i>
+                  <span class="skill-chip-name">Power BI</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 4: Database / Other -->
+            <div class="skill-category-card reveal-horizontal">
+              <div class="category-header">
+                <div class="category-icon db-icon">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <h3 class="category-title">Database / Other</h3>
+              </div>
+              <div class="skills-pills">
+                <div class="skill-chip">
+                  <i class="fa-solid fa-gears skill-chip-icon devops-color"></i>
+                  <span class="skill-chip-name">DevOps</span>
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-file-excel skill-chip-icon excel-color"></i>
+                  <span class="skill-chip-name">Excel</span>
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-table-cells skill-chip-icon dbms-color"></i>
+                  <span class="skill-chip-name">DBMS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           SLIDE 5: PROJECTS (Index 4) - With Horizontal Slider Track
+           ===================================================== -->
+      <section class="slide-section" id="projects" data-slide-index="4">
+        <div class="container slide-inner">
+          <div class="section-header reveal-horizontal">
+            <span class="section-badge">Academic &amp; Practical Work</span>
+            <h2 class="section-title">Projects</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">
+              Horizontal project cards with smooth swipe &amp; navigation controls.
+            </p>
+          </div>
+
+          <!-- Horizontal Projects Carousel Container -->
+          <div class="projects-carousel-wrapper">
+            <!-- Carousel Action Controls -->
+            <div class="projects-carousel-nav">
+              <button class="proj-nav-arrow" id="proj-prev-arrow" aria-label="Previous Projects">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <span class="proj-carousel-indicator" id="proj-indicator">1 / 4</span>
+              <button class="proj-nav-arrow" id="proj-next-arrow" aria-label="Next Projects">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Horizontal Track -->
+            <div class="projects-viewport" id="projects-viewport">
+              <div class="projects-grid" id="projects-track">
+
+                <!-- Project 1: Portfolio Website -->
+                <article class="project-card reveal-horizontal">
+                  <div class="project-visual visual-portfolio">
+                    <div class="project-visual-icon">
+                      <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <span class="project-card-badge">Web Development</span>
+                  </div>
+                  <div class="project-card-content">
+                    <h3 class="project-card-title">Portfolio Website</h3>
+                    <p class="project-card-desc">
+                      Developed a responsive personal portfolio using HTML and CSS. Showcased projects, skills, and contact details.
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">HTML</span>
+                      <span class="tag">CSS</span>
+                    </div>
+                    <div class="project-buttons">
+                      <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-card-github">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                      </a>
+                      <a href="#" class="btn btn-card-demo">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <span>Live Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Project 2: Health and Fitness Application -->
+                <article class="project-card reveal-horizontal">
+                  <div class="project-visual visual-fitness">
+                    <div class="project-visual-icon">
+                      <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <span class="project-card-badge">Web Application</span>
+                  </div>
+                  <div class="project-card-content">
+                    <h3 class="project-card-title">Health and Fitness Application</h3>
+                    <p class="project-card-desc">
+                      Developed a health and fitness web app for workout and BMI tracking. Implemented using HTML, CSS, and Python.
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">HTML</span>
+                      <span class="tag">CSS</span>
+                      <span class="tag">Python</span>
+                    </div>
+                    <div class="project-buttons">
+                      <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-card-github">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                      </a>
+                      <a href="#" class="btn btn-card-demo">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <span>Live Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Project 3: Digital Recommendation System -->
+                <article class="project-card reveal-horizontal">
+                  <div class="project-visual visual-recommendation">
+                    <div class="project-visual-icon">
+                      <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <span class="project-card-badge">Machine Learning</span>
+                  </div>
+                  <div class="project-card-content">
+                    <h3 class="project-card-title">Digital Recommendation System</h3>
+                    <p class="project-card-desc">
+                      Developed a recommendation system that suggests relevant content based on user preferences and behavior. Implemented personalized features using data analysis and basic machine learning techniques.
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">Python</span>
+                      <span class="tag">Data Analysis</span>
+                      <span class="tag">Machine Learning</span>
+                    </div>
+                    <div class="project-buttons">
+                      <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-card-github">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                      </a>
+                      <a href="#" class="btn btn-card-demo">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <span>Live Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Project 4: Personalized Learning System -->
+                <article class="project-card reveal-horizontal">
+                  <div class="project-visual visual-learning">
+                    <div class="project-visual-icon">
+                      <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <span class="project-card-badge">Web &amp; Data</span>
+                  </div>
+                  <div class="project-card-content">
+                    <h3 class="project-card-title">Personalized Learning System</h3>
+                    <p class="project-card-desc">
+                      Designed a personalized learning platform that adapts content according to individual user performance. Built using web technologies and data-driven methods to enhance user learning experience.
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">Web Technologies</span>
+                      <span class="tag">Data-driven Methods</span>
+                    </div>
+                    <div class="project-buttons">
+                      <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-card-github">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                      </a>
+                      <a href="#" class="btn btn-card-demo">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <span>Live Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           SLIDE 6: HACKATHONS (Index 5)
+           ===================================================== -->
+      <section class="slide-section" id="hackathons" data-slide-index="5">
+        <div class="container slide-inner">
+          <div class="section-header reveal-horizontal">
+            <span class="section-badge">Competitive Engineering</span>
+            <h2 class="section-title">Hackathons &amp; Competitions</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">
+              Hackathon participation and problem-solving initiatives.
+            </p>
+          </div>
+
+          <div class="hackathons-grid">
+            <!-- Hackathon 1: Smart India Hackathon -->
+            <div class="hackathon-card reveal-horizontal">
+              <div class="hackathon-header">
+                <div class="hackathon-icon-box sih-color">
+                  <i class="fa-solid fa-award"></i>
+                </div>
+                <div>
+                  <span class="hackathon-tag">National Hackathon</span>
+                  <h3 class="hackathon-title">Smart India Hackathon</h3>
+                </div>
+              </div>
+              <div class="hackathon-body">
+                <p class="hackathon-project-name">
+                  <i class="fa-solid fa-seedling"></i> Leaf Guard – Early Disease Alert System
+                </p>
+                <p class="hackathon-desc">
+                  Participated in Leaf Guard – Early Disease Alert System. Designed to help identify crop and plant illnesses early to protect agricultural productivity.
+                </p>
+              </div>
+            </div>
+
+            <!-- Hackathon 2: Hackathon 2k26 -->
+            <div class="hackathon-card reveal-horizontal">
+              <div class="hackathon-header">
+                <div class="hackathon-icon-box h2k-color">
+                  <i class="fa-solid fa-trophy"></i>
+                </div>
+                <div>
+                  <span class="hackathon-tag">Technical Hackathon</span>
+                  <h3 class="hackathon-title">Hackathon 2k26</h3>
+                </div>
+              </div>
+              <div class="hackathon-body">
+                <p class="hackathon-project-name">
+                  <i class="fa-solid fa-magnifying-glass-location"></i> Lost and Found Network
+                </p>
+                <p class="hackathon-desc">
+                  Participated in Lost and Found Network. Developed a structured platform to facilitate reporting lost belongings and discovering found items efficiently.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           SLIDE 7: RESUME (Index 6)
+           ===================================================== -->
+      <section class="slide-section" id="resume" data-slide-index="6">
+        <div class="container slide-inner">
+          <div class="section-header reveal-horizontal">
+            <span class="section-badge">Curriculum Vitae</span>
+            <h2 class="section-title">My Resume</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="resume-container">
+            <div class="resume-card-horizontal reveal-horizontal">
+              <div class="resume-info-left">
+                <div class="resume-badge-pill">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>Official PDF Document</span>
+                </div>
+                <h3 class="resume-title">KOLA SAMEERA – Official Resume</h3>
+                <p class="resume-role">B.Tech in Computer Science and Engineering | Sridevi Women’s Engineering College</p>
+                <p class="resume-description">
+                  Interested in learning more about my education, technical skills, projects, and hackathon participation? You can view the original PDF document in your browser or download a copy below.
+                </p>
+
+                <div class="resume-key-points">
+                  <span><i class="fa-solid fa-check"></i> Complete Academic Record</span>
+                  <span><i class="fa-solid fa-check"></i> Technical &amp; Programming Skills</span>
+                  <span><i class="fa-solid fa-check"></i> Project Summaries</span>
+                </div>
+              </div>
+
+              <div class="resume-actions-right">
+                <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-resume" id="btn-view-resume-main">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <span>View Resume (PDF)</span>
+                </a>
+
+                <a href="assets/resume.pdf" download="KOLA_SAMEERA_Resume.pdf" class="btn btn-secondary btn-resume" id="btn-download-resume-main">
+                  <i class="fa-solid fa-cloud-arrow-down"></i>
+                  <span>Download Resume</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           SLIDE 8: CONTACT & FOOTER (Index 7)
+           ===================================================== -->
+      <section class="slide-section" id="contact" data-slide-index="7">
+        <div class="container slide-inner">
+          <div class="section-header reveal-horizontal">
+            <span class="section-badge">Get In Touch</span>
+            <h2 class="section-title">Contact Me</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">
+              Feel free to reach out for internship opportunities, project discussions, or academic collaborations.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- LEFT: Real Contact Channels -->
+            <div class="contact-info reveal-horizontal">
+              <h3 class="contact-info-title">Contact Information</h3>
+              <p class="contact-info-desc">
+                I am actively seeking internship opportunities. Reach out via email, phone call, or connect on LinkedIn and GitHub.
+              </p>
+
+              <div class="contact-methods">
+                <a href="tel:+916301623737" class="contact-method-card" aria-label="Call Kola Sameera at +91-6301623737">
+                  <div class="method-icon phone-bg">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div class="method-content">
+                    <span class="method-label">Phone</span>
+                    <span class="method-value">+91-6301623737</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square method-arrow"></i>
+                </a>
+
+                <a href="mailto:kolasameera90@gmail.com" class="contact-method-card" aria-label="Email Kola Sameera at kolasameera90@gmail.com">
+                  <div class="method-icon email-bg">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div class="method-content">
+                    <span class="method-label">Email</span>
+                    <span class="method-value">kolasameera90@gmail.com</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square method-arrow"></i>
+                </a>
+
+                <div class="contact-method-card location-card">
+                  <div class="method-icon location-bg">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div class="method-content">
+                    <span class="method-label">Location</span>
+                    <span class="method-value">Nagarkurnool, Telangana, India</span>
+                  </div>
+                </div>
+
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+                  <div class="method-icon github-bg">
+                    <i class="fa-brands fa-github"></i>
+                  </div>
+                  <div class="method-content">
+                    <span class="method-label">GitHub</span>
+                    <span class="method-value">github.com/yourusername</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square method-arrow"></i>
+                </a>
+
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+                  <div class="method-icon linkedin-bg">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </div>
+                  <div class="method-content">
+                    <span class="method-label">LinkedIn</span>
+                    <span class="method-value">linkedin.com/in/yourusername</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square method-arrow"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- RIGHT: Interactive Contact Form -->
+            <div class="contact-form-wrapper reveal-horizontal">
+              <form class="contact-form" id="contact-form" novalidate>
+                <h3 class="form-title">Send a Message</h3>
+
+                <div class="form-group">
+                  <label for="name" class="form-label">
+                    <span>Name</span>
+                    <span class="required" aria-hidden="true">*</span>
+                  </label>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                  <span class="field-error" id="name-error">Please enter your name.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">
+                    <span>Email</span>
+                    <span class="required" aria-hidden="true">*</span>
+                  </label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                  <span class="field-error" id="email-error">Please enter a valid email address.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="message" class="form-label">
+                    <span>Message</span>
+                    <span class="required" aria-hidden="true">*</span>
+                  </label>
+                  <textarea id="message" name="message" rows="4" class="form-input form-textarea" placeholder="Write your message here..." required></textarea>
+                  <span class="field-error" id="message-error">Please write your message.</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit" id="btn-submit">
+                  <span>Send Message</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+
+                <div class="form-status" id="form-status" role="alert" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Slide Footer -->
+          <footer class="slide-footer">
+            <p class="footer-copyright">&copy; 2026 KOLA SAMEERA. All Rights Reserved. • Built with HTML, CSS &amp; JavaScript</p>
+          </footer>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================
+       3. FLOATING BOTTOM SLIDER CONTROLLER BAR
+       ========================================================= -->
+  <div class="slider-control-bar" id="slider-control-bar">
+    <button class="slide-ctrl-btn" id="ctrl-prev-btn" aria-label="Previous Section">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span class="ctrl-label">Prev</span>
+    </button>
+
+    <!-- Slide Indicator Dots -->
+    <div class="slider-dots-container" id="slider-dots">
+      <button class="slider-dot active" data-dot-index="0" title="Home" aria-label="Slide 1: Home"></button>
+      <button class="slider-dot" data-dot-index="1" title="About" aria-label="Slide 2: About"></button>
+      <button class="slider-dot" data-dot-index="2" title="Education" aria-label="Slide 3: Education"></button>
+      <button class="slider-dot" data-dot-index="3" title="Skills" aria-label="Slide 4: Skills"></button>
+      <button class="slider-dot" data-dot-index="4" title="Projects" aria-label="Slide 5: Projects"></button>
+      <button class="slider-dot" data-dot-index="5" title="Hackathons" aria-label="Slide 6: Hackathons"></button>
+      <button class="slider-dot" data-dot-index="6" title="Resume" aria-label="Slide 7: Resume"></button>
+      <button class="slider-dot" data-dot-index="7" title="Contact" aria-label="Slide 8: Contact"></button>
+    </div>
+
+    <!-- Slide Number Indicator -->
+    <div class="slider-counter" id="slider-counter">
+      <span id="current-slide-num">01</span> / <span>08</span>
+    </div>
+
+    <button class="slide-ctrl-btn" id="ctrl-next-btn" aria-label="Next Section">
+      <span class="ctrl-label">Next</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
